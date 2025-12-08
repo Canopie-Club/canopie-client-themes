@@ -301,12 +301,13 @@ dependencies = [
 
 [[package]]
 name = "canopie-client-theme-base"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "actix-web",
  "chrono",
  "diesel",
  "maud",
+ "regex",
  "schemars",
  "serde",
  "serde_json",

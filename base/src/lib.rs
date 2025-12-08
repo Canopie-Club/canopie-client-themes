@@ -1,6 +1,9 @@
+pub mod components;
 pub mod config;
 pub mod db;
 pub mod header;
 pub mod models;
 pub mod renderer;
 pub mod schema;
+pub mod types;
+pub mod utils;

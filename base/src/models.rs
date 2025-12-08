@@ -2,13 +2,14 @@
 
 #![allow(unused)]
 #![allow(clippy::all)]
-use crate::schema::*;
-
+use crate::{schema::*, types::tiptap::TipTapNode};
 
 use chrono::NaiveDateTime;
-use uuid::Uuid;
 use diesel::prelude::*;
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+use uuid::Uuid;
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = albums)]
 pub struct Album {
     pub id: String,
@@ -21,7 +22,9 @@ pub struct Album {
     pub links: Option<serde_json::Value>,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = dates)]
 pub struct Date {
     pub id: String,
@@ -42,7 +45,9 @@ pub struct Date {
     pub project_id: String,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = email_campaigns)]
 pub struct EmailCampaign {
     pub id: String,
@@ -53,7 +58,9 @@ pub struct EmailCampaign {
     pub content: String,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = email_deliveries)]
 pub struct EmailDelivery {
     pub id: String,
@@ -64,7 +71,9 @@ pub struct EmailDelivery {
     pub status: String,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = events)]
 pub struct Event {
     pub id: String,
@@ -72,7 +81,9 @@ pub struct Event {
     pub updated_at: NaiveDateTime,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = files)]
 pub struct File {
     pub id: String,
@@ -86,7 +97,9 @@ pub struct File {
     pub project_id: String,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = folders)]
 pub struct Folder {
     pub id: String,
@@ -97,7 +110,9 @@ pub struct Folder {
     pub parent_id: Option<String>,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = menu_item_labels)]
 pub struct MenuItemLabel {
     pub id: String,
@@ -108,7 +123,9 @@ pub struct MenuItemLabel {
     pub updated_at: NaiveDateTime,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = menu_items)]
 pub struct MenuItem {
     pub id: String,
@@ -124,7 +141,9 @@ pub struct MenuItem {
     pub active: i32,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = menus)]
 pub struct Menu {
     pub id: String,
@@ -136,7 +155,9 @@ pub struct Menu {
     pub website_id: String,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = page_content)]
 pub struct PageContent {
     pub id: Uuid,
@@ -144,13 +165,15 @@ pub struct PageContent {
     pub default_content: bool,
     pub preview: bool,
     pub language: String,
-    pub content: serde_json::Value,
+    pub content: TipTapNode,
     pub created_at: NaiveDateTime,
     pub updated_at: NaiveDateTime,
     pub template: Option<String>,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = pages)]
 pub struct Page {
     pub id: String,
@@ -165,7 +188,9 @@ pub struct Page {
     pub website_id: String,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = payment_invoices)]
 pub struct PaymentInvoice {
     pub id: String,
@@ -179,7 +204,9 @@ pub struct PaymentInvoice {
     pub payment_intent_id: Option<String>,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = payment_plans)]
 pub struct PaymentPlan {
     pub id: String,
@@ -194,7 +221,9 @@ pub struct PaymentPlan {
     pub active: i32,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = payment_subscriptions)]
 pub struct PaymentSubscription {
     pub id: String,
@@ -209,7 +238,9 @@ pub struct PaymentSubscription {
     pub active_sites_count: i32,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = project_extras)]
 pub struct ProjectExtra {
     pub id: String,
@@ -220,7 +251,9 @@ pub struct ProjectExtra {
     pub active: i32,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = project_promotions)]
 pub struct ProjectPromotion {
     pub id: String,
@@ -234,7 +267,9 @@ pub struct ProjectPromotion {
     pub active: i32,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = project_users)]
 pub struct ProjectUser {
     pub id: String,
@@ -246,7 +281,9 @@ pub struct ProjectUser {
     pub terms_date: Option<NaiveDateTime>,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = projects)]
 pub struct Project {
     pub id: String,
@@ -258,7 +295,9 @@ pub struct Project {
     pub default_language: String,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = route_records)]
 pub struct RouteRecord {
     pub id: String,
@@ -269,7 +308,9 @@ pub struct RouteRecord {
     pub website_id: String,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = stripe_customers)]
 pub struct StripeCustomer {
     pub id: String,
@@ -279,7 +320,9 @@ pub struct StripeCustomer {
     pub stripe_customer_id: String,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = subscribers)]
 pub struct Subscriber {
     pub id: String,
@@ -292,7 +335,9 @@ pub struct Subscriber {
     pub country: Option<String>,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = subscriptions)]
 pub struct Subscription {
     pub id: String,
@@ -304,7 +349,9 @@ pub struct Subscription {
     pub unsubscribed_at: Option<NaiveDateTime>,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(primary_key(role_name))]
 #[diesel(table_name = user_roles)]
 pub struct UserRole {
@@ -312,7 +359,9 @@ pub struct UserRole {
     pub value: i32,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = user_sessions)]
 pub struct UserSession {
     pub id: String,
@@ -321,7 +370,9 @@ pub struct UserSession {
     pub user_id: String,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = users)]
 pub struct User {
     pub id: String,
@@ -335,7 +386,9 @@ pub struct User {
     pub confirmed_at: Option<NaiveDateTime>,
 }
 
-#[derive(Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(
+    Queryable, Selectable, Identifiable, Debug, Clone, serde::Serialize, serde::Deserialize,
+)]
 #[diesel(table_name = websites)]
 pub struct Website {
     pub id: String,
@@ -347,4 +400,3 @@ pub struct Website {
     pub updated_at: NaiveDateTime,
     pub title: String,
 }
-
