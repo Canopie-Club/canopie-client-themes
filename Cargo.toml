@@ -1,0 +1,24 @@
+[package]
+name = "canopie-client-theme-base"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-web = "4.12.1"
+chrono = { version = "0.4.42", features = ["serde"] }
+# Database & ORM
+diesel = { version = "2.3", features = [
+    "postgres",
+    "r2d2",
+    "uuid",
+    "chrono",
+    "serde_json",
+] }
+maud = "0.27.0"
+schemars = "1.1.0"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4", "serde"] }
+strum = "0.27.2"
+strum_macros = "0.27.2"
+utoipa = "5.4.0"
