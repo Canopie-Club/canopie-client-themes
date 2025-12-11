@@ -1,5 +1,5 @@
 [package]
-name = "canopie-client-theme-{{THEME_NAME}}"
+name = "canopie-client-theme-{{THEME_ID}}"
 version = "0.1.0"
 edition = "{{YEAR}}"
 
