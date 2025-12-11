@@ -1,0 +1,80 @@
+@reference "./tailwind.css";
+
+.cabin-sketch-regular {
+    font-family: "Cabin Sketch", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.cabin-sketch-bold {
+    font-family: "Cabin Sketch", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.layout-epk {
+    @apply p-0 sm:p-4 pt-14 sm:pt-14;
+
+    .background-image {
+        @apply fixed top-0 inset-0 z-0;
+        @apply min-h-screen;
+        background-image: url("/_canopie/static/images/theme/morningstar/mats/mat1.webp");
+        background-size: 100%;
+        background-size: cover;
+
+        /*// @media (max-width: 500px) {
+        // }*/
+    }
+
+    .header {
+        @apply fixed top-0 left-0 w-full h-10 z-10;
+
+        background-color: rgb(222 222 222 / 76%);
+        backdrop-filter: blur(10px);
+
+        .header-content {
+            @apply max-w-screen-lg mx-auto h-full;
+            @apply flex justify-start items-center;
+            @apply text-base font-bold italic;
+            @apply px-8 uppercase;
+
+            letter-spacing: 0.2em;
+            color: #2d62ac;
+
+            font-family: "Cabin Sketch", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    }
+
+    .frosted-glass {
+        @apply absolute inset-0 z-10;
+        background-color: rgba(255, 255, 255, 0.75);
+        /*// backdrop-filter: blur(100px);*/
+    }
+
+    .inner {
+        @apply relative -top-4 -left-4 -right-4 -bottom-4 p-8;
+        @apply bg-gray-50;
+        /*// @apply relative -top-4 -left-4 -right-4 -bottom-4 p-8;*/
+
+        width: calc(100% + 2rem);
+        height: calc(100% + 2rem);
+
+        /*// background-image: url("/images/mats/mat1.webp");*/
+
+        background-size: 100%;
+        background-position: top;
+    }
+
+    .inner-content {
+        @apply p-5 relative z-10;
+    }
+
+    .layout-content {
+        @apply p-4 max-w-screen-lg mx-auto;
+        @apply min-w-fit;
+    }
+}
+
+@import "./liminal-zone.css";

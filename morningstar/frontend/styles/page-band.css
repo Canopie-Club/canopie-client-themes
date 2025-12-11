@@ -1,0 +1,45 @@
+@reference "./tailwind.css";
+
+section#band {
+	--header-angle: 0deg;
+	--header-width: 280px;
+	--header-height: 100px;
+	--header-computed-height: calc(
+		(var(--header-height) * cos(var(--header-angle))) +
+		var(--header-width) *
+		sin(var(--header-angle))
+	);
+	--header-computed-width: calc(
+		(var(--header-width) * cos(var(--header-angle))) +
+		var(--header-height) *
+		sin(var(--header-angle))
+	);
+
+	padding-top: calc(var(--header-computed-height) + 1rem);
+	@apply px-4;
+
+	.big-block {
+		@apply h-0 sm:h-[calc(300px_-_var(--header-computed-height))] md:h-[calc(445px_-_var(--header-computed-height))];
+		@apply w-0 sm:w-full md:w-[630px];
+		@apply float-left;
+	}
+
+	.band-header {
+		@apply left-4 sm:left-[440px] md:left-[630px];
+		content: "";
+		background-image: url("/_canopie/static/images/theme/morningstar/titles/band.webp");
+		background-repeat: no-repeat;
+		background-size: contain;
+		height: var(--header-height);
+		width: var(--header-width);
+		position: absolute;
+		top: 1rem;
+		transform-origin: center;
+		transform: translateY(
+				calc((var(--header-computed-height) - var(--header-height)) / 2)
+			)
+			translateX(calc((var(--header-computed-width) - var(--header-width)) / 2))
+			rotate(var(--header-angle));
+		z-index: 10;
+	}
+}

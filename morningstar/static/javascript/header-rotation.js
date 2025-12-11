@@ -1,4 +1,4 @@
-// frontend/javascript/theme/morningstar/header-rotation.ts
+// ../morningstar/frontend/javascript/header-rotation.ts
 function updateHeaderRotation() {
   const bandSection = document.querySelector("section#band");
   if (!bandSection)

@@ -1,0 +1,87 @@
+@reference "./tailwind.css";
+
+.layout-content {
+  @apply w-full;
+
+  .content {
+    @apply w-full mx-auto bg-gray-50;
+
+  .content-inner {
+
+    @apply py-4 px-4 pt-8 md:px-16 lg:px-36;
+
+    p {
+      @apply mb-4 mx-auto text-left;
+    }
+
+    p:has(img) {
+      @apply mx-auto max-w-md;
+
+      img {
+        @apply w-full rounded;
+
+        &[alt="Liminal Zone"] {
+          @apply bg-gray-200 rounded mt-12;
+        }
+      }
+    }
+
+    /*// ================================================
+    // TODO: This is a temporary fix to ensure the image is displayed correctly
+    // Replace with better logic after the backend is updated*/
+    img {
+      @apply w-full rounded;
+      @apply mx-auto max-w-md;
+      @apply bg-gray-200 rounded mt-12;
+    }
+    /*// ================================================*/
+
+    ul {
+      @apply text-xs font-bold mt-4 mb-8 list-none;
+      @apply text-center;
+
+      li {
+        p {
+          @apply text-center m-0;
+        }
+      }
+    }
+
+    ol {
+      @apply list-decimal text-left list-inside text-sm;
+      @apply mb-4;
+
+      li {
+        p {
+          @apply inline;
+        }
+      }
+    }
+
+    blockquote {
+      @apply mb-4 pl-4 border-l-2 border-gray-300;
+      @apply italic text-base font-medium;
+
+      p {
+          @apply mb-2;
+      }
+    }
+
+    hr {
+      @apply my-8 border-gray-300 border-b-2 border-t-0;
+    }
+
+    h2 {
+      @apply text-sm font-bold mb-2 mt-4 text-left;
+
+      &.credits {
+        @apply mt-8;
+      }
+    }
+
+    p.credits {
+      @apply text-sm mb-4 text-left;
+    }
+  }
+  }
+}

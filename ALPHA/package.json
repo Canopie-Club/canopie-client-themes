@@ -1,0 +1,21 @@
+{
+	"name": "canopie-client-frontend",
+	"private": true,
+	"scripts": {
+		"build:tailwind": "bun run ./scripts/tailwind_build.ts",
+		"build:typescript": "bun run ./scripts/typescript_build.ts",
+		"theme:create": "bun run ./scripts/new_theme.ts",
+		"test": "bun run ./test.ts"
+	},
+	"devDependencies": {
+		"@types/bun": "^1.2.22",
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"@tailwindcss/cli": "^4.1.17",
+		"bun": "^1.2.22",
+		"case-anything": "^3.1.2",
+		"tailwind": "^4.0.0",
+		"tailwindcss": "^4.1.13"
+	}
+}

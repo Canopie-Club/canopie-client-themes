@@ -1,2 +1,2 @@
-// frontend/javascript/theme/morningstar/fish.ts
+// ../morningstar/frontend/javascript/fish.ts
 console.log("Morning Star Fish!");

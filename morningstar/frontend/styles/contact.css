@@ -1,0 +1,22 @@
+@reference "./tailwind.css";
+
+.contact-container {
+	/*//   @apply fixed bottom-0 left-0 w-svw h-full;*/
+	@apply flex justify-center items-center relative z-10;
+
+	/*//   background: #94d1ca;*/
+
+	.page-background {
+		@apply w-svw h-full pt-5;
+		background: #94d1ca;
+
+		.page-content {
+			@apply w-full max-w-screen-md p-4 mx-auto;
+		}
+	}
+
+	.page-container {
+		@apply absolute bottom-0 left-0 w-full h-full z-10 overflow-visible;
+		/*// background: #94d1ca;*/
+	}
+}

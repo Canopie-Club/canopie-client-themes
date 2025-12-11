@@ -1,4 +1,4 @@
-// frontend/javascript/theme/morningstar/spa.ts
+// ../morningstar/frontend/javascript/spa.ts
 document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll("a[href^='/']");
   const sections = [];

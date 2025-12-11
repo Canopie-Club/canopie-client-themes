@@ -1,4 +1,4 @@
-// frontend/javascript/theme/morningstar/observe.ts
+// ../morningstar/frontend/javascript/observe.ts
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll("section[id]");
   const visibleItems = new Set;
