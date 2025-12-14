@@ -16,6 +16,7 @@ use crate::{
     utils::{get_website, get_website_from_project_id},
 };
 
+#[actix_web::main]
 pub async fn dev_serve(renderer: ThemeRenderer) -> std::io::Result<()> {
     println!("Starting server");
 
@@ -51,6 +52,7 @@ pub async fn dev_serve(renderer: ThemeRenderer) -> std::io::Result<()> {
             // .configure(api::config)
             // .configure(routes::init)
             .service(Files::new("/static", "static").use_last_modified(true))
+            .service(Files::new("/_canopie/static", "static").use_last_modified(true))
             .route("/{tail:.*}", web::get().to(dev_page_response))
     })
     .bind(("0.0.0.0", port.parse().unwrap()))?

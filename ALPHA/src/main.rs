@@ -1,7 +1,6 @@
 use canopie_client_utils::dev::{renderer::get_default_theme, run::dev_serve};
 
-#[actix_web::main]
-async fn main() -> std::io::Result<()> {
+fn main() -> Result<(), std::io::Error> {
     let theme = get_default_theme();
-    dev_serve(theme).await
+    dev_serve(theme)
 }

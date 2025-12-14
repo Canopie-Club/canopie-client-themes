@@ -1,4 +1,4 @@
-use canopie_client_theme_base::{
+use canopie_client_utils::{
     components::{Asset, AssetOptions, Formatter, build_components},
     db::PgPool,
     header::Header,
@@ -140,7 +140,7 @@ pub fn morningstar(
     headers: &mut Header,
     website: Website,
     path: &str,
-) -> (bool, Markup) {
+) -> PageResult {
     let menus = get_menus(pool, &website.id);
 
     let main_menu = menus.iter().find(|menu| menu.0.name == "Main");
@@ -160,13 +160,8 @@ pub fn morningstar(
 
     let assets = page_response.formatter.collect_assets(Some("morningstar"));
 
-    let (success, content) = match page_response.result {
-        PageResult::Found(content) => (true, content),
-        PageResult::NotFound(content) => (false, content),
-    };
-
     headers.add_assets(assets);
     headers.set_title(page_response.title.as_str());
 
-    (success, content)
+    page_response.result
 }
