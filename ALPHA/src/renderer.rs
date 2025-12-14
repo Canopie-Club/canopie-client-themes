@@ -4,6 +4,7 @@ use crate::{components::Formatter, db::PgPool, header::Header, models::Website};
 
 pub type ContentBuilder = fn(&PgPool, &mut Header, Website, &str) -> PageResult;
 
+#[derive(Debug, Clone)]
 pub struct ThemeRenderer {
     pub name: String,
     pub build_content: ContentBuilder,

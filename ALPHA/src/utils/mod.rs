@@ -220,3 +220,23 @@ pub fn get_project_id(pool: &PgPool, domain: String, subdomain: Option<String>) 
 
     project_id.unwrap_or("No ID".to_string())
 }
+
+pub fn get_website_from_project_id(pool: &PgPool, project_id: String) -> Option<Website> {
+    if project_id == "No ID" {
+        return None;
+    }
+
+    let conn = &mut pool.get().unwrap();
+
+    let website_result = websites::table
+        .filter(websites::project_id.eq(project_id))
+        .select(Website::as_select())
+        .first::<Website>(conn);
+
+    println!("Website: {:?}", website_result);
+
+    match website_result {
+        Ok(website) => Some(website),
+        Err(_) => None,
+    }
+}
