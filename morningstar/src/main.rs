@@ -1,7 +1,9 @@
+use std::io::Error;
+
 use canopie_client_theme_morningstar::morningstar;
 use canopie_client_utils::{dev::run::dev_serve, renderer::ThemeRenderer};
 
-fn main() {
+fn main() -> Result<(), Error> {
     // Asset::get(file_path);
 
     let renderer = ThemeRenderer {

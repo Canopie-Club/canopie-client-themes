@@ -1,23 +1,29 @@
-use std::sync::Arc;
+use std::{path::PathBuf, sync::Arc};
 
 use actix_cors::Cors;
 use actix_files::Files;
 use actix_web::{App, HttpRequest, HttpResponse, HttpServer, Responder, middleware::Logger, web};
 use canopie_utils::encre::create_encre_styles;
 use canopie_utils::image_transformations::ImgParams;
+use dotenvy::from_path;
 use libvips::VipsApp;
 use maud::PreEscaped;
+use rust_embed::Embed;
 
 use crate::{
     db::{self, PgPool},
     dev::response::build_dev_page_response,
     header::Header,
     renderer::{PageResponse, PageResult, ThemeRenderer},
+    resource::Resource,
     utils::{get_website, get_website_from_project_id},
 };
 
 #[actix_web::main]
-pub async fn dev_serve(renderer: ThemeRenderer) -> std::io::Result<()> {
+pub async fn dev_serve(
+    renderer: ThemeRenderer,
+    resources: Option<impl Embed>,
+) -> std::io::Result<()> {
     println!("Starting server");
 
     // Initialize libvips globally
@@ -29,10 +35,16 @@ pub async fn dev_serve(renderer: ThemeRenderer) -> std::io::Result<()> {
 
     dotenvy::dotenv().ok();
 
+    let env_path = std::env::var("ENV_PATH").unwrap_or_else(|_| "../ALPHA/.env".into());
+
+    from_path(PathBuf::from(env_path)).ok();
+
     let port = std::env::var("PORT").unwrap_or_else(|_| "8000".to_string());
     let dev = true;
 
     let pool = db::init_pool();
+
+    // let
 
     // let read_only = db::ensure_read_only(&pool);
 
