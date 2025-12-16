@@ -49,7 +49,7 @@ pub fn section_home() -> Markup {
             (main_menu())
 
             div class="sm:h-40 md:h-80 flex items-center justify-center"{
-              img src="/_canopie/static/images/theme/morningstar/names.webp" {}
+              img src="/_canopie/static/images/names.webp" {}
             }
         },
         Some(bordered_props),
@@ -66,7 +66,7 @@ pub fn section_home() -> Markup {
                 (bordered_menu)
 
                 // div class="sm:h-40 md:h-80 flex items-center justify-center"{
-                //   img src="/_canopie/static/images/theme/morningstar/names.webp" {}
+                //   img src="/_canopie/static/images/names.webp" {}
                 // }
             }
             div class="block sm:hidden absolute top-0 left-0 z-10 w-full" {

@@ -27,7 +27,7 @@ section#band {
 	.band-header {
 		@apply left-4 sm:left-[440px] md:left-[630px];
 		content: "";
-		background-image: url("/_canopie/static/images/theme/morningstar/titles/band.webp");
+		background-image: url("/_canopie/static/images/titles/band.webp");
 		background-repeat: no-repeat;
 		background-size: contain;
 		height: var(--header-height);

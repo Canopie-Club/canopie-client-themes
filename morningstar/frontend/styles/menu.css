@@ -5,7 +5,7 @@
 
 	.menu-bg {
 		@apply absolute top-0 left-0 h-full w-full bg-cover bg-center;
-		background-image: url("/_canopie/static/images/theme/morningstar/menu/triangles-rainbow.webp");
+		background-image: url("/_canopie/static/images/menu/triangles-rainbow.webp");
 	}
 
 	.menu-content {
@@ -24,7 +24,7 @@
 				width: 25%;
 				height: 17%;
 				clip-path: polygon(11% 61%, 72% 0, 91% 32%, 66% 44%, 29% 87%);
-				background-image: url("/_canopie/static/images/theme/morningstar/menu/band.webp");
+				background-image: url("/_canopie/static/images/menu/band.webp");
 			}
 
 			&.vids {
@@ -33,7 +33,7 @@
 				width: 20%;
 				height: 12%;
 				clip-path: polygon(-11% 92%, 77% -4%, 96% 26%, 67% 62%, 13% 115%);
-				background-image: url("/_canopie/static/images/theme/morningstar/menu/vids.webp");
+				background-image: url("/_canopie/static/images/menu/vids.webp");
 			}
 
 			&.music {
@@ -43,7 +43,7 @@
 				height: 17%;
 				transform: rotate(-5deg);
 				clip-path: polygon(7% 73%, 72% 0, 86% 0%, 100% 26%, 69% 44%, 16% 100%);
-				background-image: url("/_canopie/static/images/theme/morningstar/menu/music.webp");
+				background-image: url("/_canopie/static/images/menu/music.webp");
 			}
 			&.live {
 				top: 29%;
@@ -51,7 +51,7 @@
 				width: 20%;
 				height: 9%;
 				clip-path: polygon(0% 58%, 62% -10%, 81% 32%, 46% 64%, 3% 117%);
-				background-image: url("/_canopie/static/images/theme/morningstar/menu/live.webp");
+				background-image: url("/_canopie/static/images/menu/live.webp");
 			}
 
 			&.contact {
@@ -60,7 +60,7 @@
 				width: 20%;
 				height: 16%;
 				clip-path: polygon(-17% 41%, 103% 0%, 100% 32%, 62% 46%, 6% 82%);
-				background-image: url("/_canopie/static/images/theme/morningstar/menu/contact.webp");
+				background-image: url("/_canopie/static/images/menu/contact.webp");
 			}
 		}
 	}

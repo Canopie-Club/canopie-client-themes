@@ -19,7 +19,7 @@
 
 		.jesse-image {
 			width: calc(100% - 580px);
-			background-image: url("/_canopie/static/images/theme/morningstar/jesse-homepage.webp");
+			background-image: url("/_canopie/static/images/jesse-homepage.webp");
 			background-size: cover;
 			background-position: 30% center;
 			height: 100%;
@@ -48,7 +48,7 @@
 			z-index: 20;
 
 			&.morning-star {
-				background-image: url("/_canopie/static/images/theme/morningstar/morning-star-banner.webp");
+				background-image: url("/_canopie/static/images/morning-star-banner.webp");
 				top: 2%;
 				left: 35%;
 				max-width: calc(100vw - 35%);
@@ -56,7 +56,7 @@
 			}
 
 			&.music-club {
-				background-image: url("/_canopie/static/images/theme/morningstar/music-club-banner.webp");
+				background-image: url("/_canopie/static/images/music-club-banner.webp");
 				top: 51%;
 				left: 4%;
 				max-width: calc(100vw - 4%);
@@ -113,7 +113,7 @@
 
 main {
 	section {
-		background-image: url("/_canopie/static/images/theme/morningstar/mats/mat1.webp");
+		background-image: url("/_canopie/static/images/mats/mat1.webp");
 		background-position-x: right;
 		background-size: cover;
 		position: relative;
@@ -138,7 +138,7 @@ main {
 
 .section-vids {
 	.page-title {
-		background-image: url("/_canopie/static/images/theme/morningstar/titles/vids.webp");
+		background-image: url("/_canopie/static/images/titles/vids.webp");
 		height: 80px;
 		width: 280px;
 	}
@@ -146,7 +146,7 @@ main {
 
 .section-music {
 	.page-title {
-		background-image: url("/_canopie/static/images/theme/morningstar/titles/music.webp");
+		background-image: url("/_canopie/static/images/titles/music.webp");
 		height: 100px;
 		transform: rotate(15deg) translateY(30px);
 		transform-origin: center top;

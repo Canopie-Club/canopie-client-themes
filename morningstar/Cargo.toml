@@ -4,7 +4,8 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-canopie-client-utils = { path = "../ALPHA", version = "0.1.2", features = [] }
+canopie-client-utils = { path = "../ALPHA", version = "0.1.2", features = ["embed"] }
+include_dir = "0.7.4"
 # canopie-client-theme-base = { git = "https://github.com/Canopie-Club/canopie-client-themes.git", branch = "master" }
 maud = "0.27.0"
 regex = "1.12.2"

@@ -143,29 +143,14 @@ impl Formatter {
 
             match asset {
                 Asset::Script(options) => {
-                    // See if file static/javascript/{theme_key}/{path} exists
-                    let new_path = format!("static/javascript/theme/{}/{}.js", theme_key, path);
-                    path = if std::path::Path::new(&new_path).exists() {
-                        format!("/_canopie/{}", new_path)
-                    } else {
-                        format!("/_canopie/static/javascript/theme/_generic/{}.js", path)
-                    };
-
                     markup.push(html! {
-                        script src=(path) {
+                        script src=(format!("/_canopie/static/javascript/{}.js", path)) {
                         }
                     });
                 }
                 Asset::Style(options) => {
-                    let new_path = format!("static/styles/theme/{}/{}", theme_key, path);
-                    path = if std::path::Path::new(&new_path).exists() {
-                        format!("/_canopie/{}", new_path)
-                    } else {
-                        println!("File not found: {}", new_path);
-                        format!("/_canopie/static/styles/theme/_generic/{}", path)
-                    };
                     markup.push(html! {
-                        link rel="stylesheet" href=(path);
+                        link rel="stylesheet" href=(format!("/_canopie/static/styles/{}.css", path));
                     });
                 }
                 Asset::Link(options) => {

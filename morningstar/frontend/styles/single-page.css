@@ -18,7 +18,7 @@
     .background-image {
         @apply fixed top-0 inset-0 z-0;
         @apply min-h-screen;
-        background-image: url("/_canopie/static/images/theme/morningstar/mats/mat1.webp");
+        background-image: url("/_canopie/static/images/mats/mat1.webp");
         background-size: 100%;
         background-size: cover;
 

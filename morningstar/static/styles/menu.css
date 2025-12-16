@@ -1,75 +1,75 @@
 /*! tailwindcss v4.1.17 | MIT License | https://tailwindcss.com */
 .menu {
-  position: relative;
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  .menu-bg {
-    position: absolute;
-    top: calc(var(--spacing, 0.25rem) * 0);
-    left: calc(var(--spacing, 0.25rem) * 0);
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-image: url("/_canopie/static/images/theme/morningstar/menu/triangles-rainbow.webp");
-  }
-  .menu-content {
-    position: absolute;
-    top: calc(var(--spacing, 0.25rem) * 0);
-    left: calc(var(--spacing, 0.25rem) * 0);
-    height: 100%;
-    width: 100%;
-    .link {
-      position: absolute;
-      display: block;
-      cursor: pointer;
-      background-size: contain;
-      background-repeat: no-repeat;
-      color: transparent;
-      &:hover {
-        filter: brightness(2.2) contrast(1.1);
-      }
-      &.band {
-        top: 38%;
-        left: 31%;
-        width: 25%;
-        height: 17%;
-        clip-path: polygon(11% 61%, 72% 0, 91% 32%, 66% 44%, 29% 87%);
-        background-image: url("/_canopie/static/images/theme/morningstar/menu/band.webp");
-      }
-      &.vids {
-        top: 44%;
-        left: 39%;
-        width: 20%;
-        height: 12%;
-        clip-path: polygon(-11% 92%, 77% -4%, 96% 26%, 67% 62%, 13% 115%);
-        background-image: url("/_canopie/static/images/theme/morningstar/menu/vids.webp");
-      }
-      &.music {
-        top: 48%;
-        left: 41%;
-        width: 25%;
-        height: 17%;
-        transform: rotate(-5deg);
-        clip-path: polygon(7% 73%, 72% 0, 86% 0%, 100% 26%, 69% 44%, 16% 100%);
-        background-image: url("/_canopie/static/images/theme/morningstar/menu/music.webp");
-      }
-      &.live {
-        top: 29%;
-        left: 15%;
-        width: 20%;
-        height: 9%;
-        clip-path: polygon(0% 58%, 62% -10%, 81% 32%, 46% 64%, 3% 117%);
-        background-image: url("/_canopie/static/images/theme/morningstar/menu/live.webp");
-      }
-      &.contact {
-        top: 53%;
-        left: 57%;
-        width: 20%;
-        height: 16%;
-        clip-path: polygon(-17% 41%, 103% 0%, 100% 32%, 62% 46%, 6% 82%);
-        background-image: url("/_canopie/static/images/theme/morningstar/menu/contact.webp");
-      }
-    }
-  }
+	position: relative;
+	aspect-ratio: 1 / 1;
+	width: 100%;
+	.menu-bg {
+		position: absolute;
+		top: calc(var(--spacing, 0.25rem) * 0);
+		left: calc(var(--spacing, 0.25rem) * 0);
+		height: 100%;
+		width: 100%;
+		background-size: cover;
+		background-position: center;
+		background-image: url("/_canopie/static/images/menu/triangles-rainbow.webp");
+	}
+	.menu-content {
+		position: absolute;
+		top: calc(var(--spacing, 0.25rem) * 0);
+		left: calc(var(--spacing, 0.25rem) * 0);
+		height: 100%;
+		width: 100%;
+		.link {
+			position: absolute;
+			display: block;
+			cursor: pointer;
+			background-size: contain;
+			background-repeat: no-repeat;
+			color: transparent;
+			&:hover {
+				filter: brightness(2.2) contrast(1.1);
+			}
+			&.band {
+				top: 38%;
+				left: 31%;
+				width: 25%;
+				height: 17%;
+				clip-path: polygon(11% 61%, 72% 0, 91% 32%, 66% 44%, 29% 87%);
+				background-image: url("/_canopie/static/images/menu/band.webp");
+			}
+			&.vids {
+				top: 44%;
+				left: 39%;
+				width: 20%;
+				height: 12%;
+				clip-path: polygon(-11% 92%, 77% -4%, 96% 26%, 67% 62%, 13% 115%);
+				background-image: url("/_canopie/static/images/menu/vids.webp");
+			}
+			&.music {
+				top: 48%;
+				left: 41%;
+				width: 25%;
+				height: 17%;
+				transform: rotate(-5deg);
+				clip-path: polygon(7% 73%, 72% 0, 86% 0%, 100% 26%, 69% 44%, 16% 100%);
+				background-image: url("/_canopie/static/images/menu/music.webp");
+			}
+			&.live {
+				top: 29%;
+				left: 15%;
+				width: 20%;
+				height: 9%;
+				clip-path: polygon(0% 58%, 62% -10%, 81% 32%, 46% 64%, 3% 117%);
+				background-image: url("/_canopie/static/images/menu/live.webp");
+			}
+			&.contact {
+				top: 53%;
+				left: 57%;
+				width: 20%;
+				height: 16%;
+				clip-path: polygon(-17% 41%, 103% 0%, 100% 32%, 62% 46%, 6% 82%);
+				background-image: url("/_canopie/static/images/menu/contact.webp");
+			}
+		}
+	}
 }

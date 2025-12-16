@@ -123,7 +123,7 @@ fn build_content_for_menu_pages(
         formatter.add_assets_from(&new_formatter);
     }
 
-    formatter.add_asset(Asset::Style(AssetOptions::new("home.css")));
+    formatter.add_asset(Asset::Style(AssetOptions::new("home")));
     formatter.add_asset(Asset::Script(AssetOptions::new("spa")));
     formatter.add_asset(Asset::Script(AssetOptions::new("header-rotation")));
 
@@ -152,7 +152,7 @@ pub fn morningstar(
     let main_menu = menus.iter().find(|menu| menu.0.name == "Main");
     let mut formatter = Formatter::default(Some(website.clone()));
 
-    formatter.add_asset(Asset::Style(AssetOptions::new("index.css")));
+    formatter.add_asset(Asset::Style(AssetOptions::new("index")));
 
     formatter.insert("youtube", youtube);
     formatter.insert("albumCover", album_cover);

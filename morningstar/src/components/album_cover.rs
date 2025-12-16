@@ -13,7 +13,7 @@ pub fn album_cover(content: &TipTapNode, formatter: &Formatter) -> Markup {
         .and_then(|map| map.get("src")) // Option<&Value>
         .and_then(|v| v.as_str());
 
-    formatter.add_asset(Asset::Style(AssetOptions::new("deco-cd.css")));
+    formatter.add_asset(Asset::Style(AssetOptions::new("deco-cd")));
 
     let src_str = src.unwrap_or("");
 

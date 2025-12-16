@@ -7,9 +7,7 @@ use crate::{
 };
 
 pub fn home(content: Markup, headers: &mut Header) -> Markup {
-    headers.add_asset(
-        html!(link rel="stylesheet" href="/_canopie/static/styles/theme/morningstar/index.css";),
-    );
+    headers.add_asset(html!(link rel="stylesheet" href="/_canopie/static/styles/index.css";));
     html! {
         body class="text-gray-900 font-sans" {
             main class="prose lg:prose-lg" {
@@ -105,10 +103,10 @@ pub fn single_page(path: &str, content: Markup, headers: &mut Header) -> Markup 
             link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="";
             link rel="preconnect" href="https://fonts.gstatic.com";
             link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap";
-            link rel="stylesheet" href="/_canopie/static/styles/theme/morningstar/index.css";
-            link rel="stylesheet" href="/_canopie/static/styles/theme/morningstar/single-page.css";
+            link rel="stylesheet" href="/_canopie/static/styles/index.css";
+            link rel="stylesheet" href="/_canopie/static/styles/single-page.css";
             @if path == "/liminal-zone" {
-                link rel="stylesheet" href="/_canopie/static/styles/theme/morningstar/liminal-zone.css";
+                link rel="stylesheet" href="/_canopie/static/styles/liminal-zone.css";
             }
         },
     );
