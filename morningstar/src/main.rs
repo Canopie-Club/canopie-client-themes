@@ -1,7 +1,7 @@
 use std::io::Error;
 
 use canopie_client_theme_morningstar::morningstar;
-use canopie_client_utils::{dev::run::dev_serve, renderer::ThemeRenderer};
+use canopie_utils::{renderer::ThemeRenderer, theme_dev::run::run::dev_serve};
 use include_dir::{Dir, include_dir};
 
 fn main() -> Result<(), Error> {

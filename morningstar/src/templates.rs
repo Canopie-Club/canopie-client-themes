@@ -1,4 +1,4 @@
-use canopie_client_utils::header::Header;
+use canopie_utils::header::Header;
 use maud::{Markup, html};
 
 use crate::{

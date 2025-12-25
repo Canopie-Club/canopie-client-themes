@@ -1,10 +1,10 @@
-use canopie_client_utils::{
+use canopie_utils::{
     components::{Asset, AssetOptions, Formatter, build_components},
     db::PgPool,
     header::Header,
     models::{Menu, MenuItem, Website},
     renderer::{PageResponse, PageResult},
-    utils::{get_menus, get_page, get_page_from_id},
+    theme_utils::{get_menus, get_page, get_page_from_id},
 };
 use maud::{Markup, html};
 

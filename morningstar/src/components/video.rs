@@ -1,4 +1,4 @@
-use canopie_client_utils::{
+use canopie_utils::{
     components::{Asset, AssetOptions, Formatter},
     types::tiptap::TipTapNode,
 };
