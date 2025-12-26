@@ -4,9 +4,16 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+# canopie-macros = { path = "../../canopie-utils/crates/macros" }
 canopie-macros = { path = "../../canopie-utils/crates/macros", registry = "canopie", version = "0.1.1" }
-canopie-utils = { path = "../../canopie-utils", registry = "canopie", version = "0.1.7", features = ["embed"] }
+# canopie-utils = { path = "../../canopie-utils" }
+canopie-utils = { path = "../../canopie-utils", registry = "canopie", version = "0.1.8" }
 include_dir = "0.7.4"
 # canopie-client-theme-base = { git = "https://github.com/Canopie-Club/canopie-client-themes.git", branch = "master" }
 maud = "0.27.0"
 regex = "1.12.2"
+
+[features]
+default=[]
+embed = ["canopie-utils/embed"]
+dev = ["embed", "canopie-utils/dev"]
