@@ -1,279 +1,275 @@
-/*! tailwindcss v4.1.17 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
 .home-container {
-	overflow-x: clip;
-	overflow-y: visible;
-	height: calc(640px * 0.916);
-	.jesse {
-		display: flex;
-		width: 100%;
-		justify-content: flex-end;
-		.jesse-image {
-			width: calc(100% - 580px);
-			background-image: url("/_canopie/static/images/jesse-homepage.webp");
-			background-size: cover;
-			background-position: 30% center;
-			height: 100%;
-		}
-	}
-	.banner-container {
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 640px;
-		width: 640px;
-		.banner {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 130%;
-			aspect-ratio: 13 / 4;
-			background-size: contain;
-			background-repeat: no-repeat;
-			z-index: 20;
-			&.morning-star {
-				background-image: url("/_canopie/static/images/morning-star-banner.webp");
-				top: 2%;
-				left: 35%;
-				max-width: calc(100vw - 35%);
-				clip-path: polygon(1.5% 34%, 0% 85%, 100% 40%, 96% 0%);
-			}
-			&.music-club {
-				background-image: url("/_canopie/static/images/music-club-banner.webp");
-				top: 51%;
-				left: 4%;
-				max-width: calc(100vw - 4%);
-				clip-path: polygon(6.5% 30%, 5% 70%, 83% 80%, 84% 38%);
-			}
-		}
-	}
-	@media (max-width: 768px) {
-		height: calc(448px * 0.916);
-		.jesse {
-			.jesse-image {
-				width: calc(100% - 348px);
-				background-position: 14% center;
-			}
-		}
-		.banner-container {
-			height: 448px;
-			width: 448px;
-		}
-	}
-	@media (max-width: 640px) {
-		height: calc(100vw * 0.916);
-		.jesse {
-			display: none;
-		}
-		.banner-container {
-			height: 100vw;
-			width: 100vw;
-			.banner {
-				width: 100%;
-				&.morning-star {
-					width: 95%;
-					top: 7%;
-					left: 3%;
-					max-width: calc(100vw - 3%);
-				}
-				&.music-club {
-					top: 57%;
-					left: 11%;
-					max-width: calc(100vw - 11%);
-				}
-			}
-		}
-	}
+  overflow-x: clip;
+  overflow-y: visible;
+  height: calc(640px * 0.916);
+  .jesse {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    .jesse-image {
+      width: calc(100% - 580px);
+      background-image: url("/_canopie/static/images/jesse-homepage.webp");
+      background-size: cover;
+      background-position: 30% center;
+      height: 100%;
+    }
+  }
+  .banner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 640px;
+    width: 640px;
+    .banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 130%;
+      aspect-ratio: 13 / 4;
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 20;
+      &.morning-star {
+        background-image: url("/_canopie/static/images/morning-star-banner.webp");
+        top: 2%;
+        left: 35%;
+        max-width: calc(100vw - 35%);
+        clip-path: polygon(1.5% 34%, 0% 85%, 100% 40%, 96% 0%);
+      }
+      &.music-club {
+        background-image: url("/_canopie/static/images/music-club-banner.webp");
+        top: 51%;
+        left: 4%;
+        max-width: calc(100vw - 4%);
+        clip-path: polygon(6.5% 30%, 5% 70%, 83% 80%, 84% 38%);
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    height: calc(448px * 0.916);
+    .jesse {
+      .jesse-image {
+        width: calc(100% - 348px);
+        background-position: 14% center;
+      }
+    }
+    .banner-container {
+      height: 448px;
+      width: 448px;
+    }
+  }
+  @media (max-width: 640px) {
+    height: calc(100vw * 0.916);
+    .jesse {
+      display: none;
+    }
+    .banner-container {
+      height: 100vw;
+      width: 100vw;
+      .banner {
+        width: 100%;
+        &.morning-star {
+          width: 95%;
+          top: 7%;
+          left: 3%;
+          max-width: calc(100vw - 3%);
+        }
+        &.music-club {
+          top: 57%;
+          left: 11%;
+          max-width: calc(100vw - 11%);
+        }
+      }
+    }
+  }
 }
 main {
-	section {
-		background-image: url("/_canopie/static/images/mats/mat1.webp");
-		background-position-x: right;
-		background-size: cover;
-		position: relative;
-		width: 100%;
-		padding: calc(var(--spacing, 0.25rem) * 4);
-		&#home {
-			display: none;
-		}
-	}
+  section {
+    background-image: url("/_canopie/static/images/mats/mat1.webp");
+    background-position-x: right;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    padding: calc(var(--spacing, 0.25rem) * 4);
+    &#home {
+      display: none;
+    }
+  }
 }
 .page-title {
-	background-repeat: no-repeat;
-	background-size: contain;
-	position: relative;
-	transform-origin: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transform-origin: center;
 }
 .section-vids {
-	.page-title {
-		background-image: url("/_canopie/static/images/titles/vids.webp");
-		height: 80px;
-		width: 280px;
-	}
+  .page-title {
+    background-image: url("/_canopie/static/images/titles/vids.webp");
+    height: 80px;
+    width: 280px;
+  }
 }
 .section-music {
-	.page-title {
-		background-image: url("/_canopie/static/images/titles/music.webp");
-		height: 100px;
-		transform: rotate(15deg) translateY(30px);
-		transform-origin: center top;
-		width: 280px;
-	}
+  .page-title {
+    background-image: url("/_canopie/static/images/titles/music.webp");
+    height: 100px;
+    transform: rotate(15deg) translateY(30px);
+    transform-origin: center top;
+    width: 280px;
+  }
 }
 .youtube-icon {
-	background-color: transparent;
-	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg>');
-	border: none;
-	cursor: pointer;
-	display: block;
-	height: 48px;
-	left: 50%;
-	position: absolute;
-	top: 50%;
-	transform: translate3d(-50%, -50%, 0);
-	transition: filter 0.2s cubic-bezier(0, 0, 0.2, 1);
-	width: 68px;
-	z-index: 1;
+  background-color: transparent;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg>');
+  border: none;
+  cursor: pointer;
+  display: block;
+  height: 48px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  transition: filter 0.2s cubic-bezier(0, 0, 0.2, 1);
+  width: 68px;
+  z-index: 1;
 }
 .section-vids {
-	.video-container {
-		margin: auto;
-		margin-bottom: calc(var(--spacing, 0.25rem) * 8);
-		display: flex;
-		max-width: 900px;
-		&:nth-of-type(odd) {
-			justify-content: flex-end;
-		}
-	}
+  .video-container {
+    margin: auto;
+    margin-bottom: calc(var(--spacing, 0.25rem) * 8);
+    display: flex;
+    max-width: 900px;
+    &:nth-of-type(odd) {
+      justify-content: flex-end;
+    }
+  }
 }
 .menu {
-	position: relative;
-	aspect-ratio: 1 / 1;
-	width: 100%;
-	.menu-bg {
-		position: absolute;
-		top: calc(var(--spacing, 0.25rem) * 0);
-		left: calc(var(--spacing, 0.25rem) * 0);
-		height: 100%;
-		width: 100%;
-		background-size: cover;
-		background-position: center;
-		background-image: url("/_canopie/static/images/menu/triangles-rainbow.webp");
-	}
-	.menu-content {
-		position: absolute;
-		top: calc(var(--spacing, 0.25rem) * 0);
-		left: calc(var(--spacing, 0.25rem) * 0);
-		height: 100%;
-		width: 100%;
-		.link {
-			position: absolute;
-			display: block;
-			cursor: pointer;
-			background-size: contain;
-			background-repeat: no-repeat;
-			color: transparent;
-			&:hover {
-				filter: brightness(2.2) contrast(1.1);
-			}
-			&.band {
-				top: 38%;
-				left: 31%;
-				width: 25%;
-				height: 17%;
-				clip-path: polygon(11% 61%, 72% 0, 91% 32%, 66% 44%, 29% 87%);
-				background-image: url("/_canopie/static/images/menu/band.webp");
-			}
-			&.vids {
-				top: 44%;
-				left: 39%;
-				width: 20%;
-				height: 12%;
-				clip-path: polygon(-11% 92%, 77% -4%, 96% 26%, 67% 62%, 13% 115%);
-				background-image: url("/_canopie/static/images/menu/vids.webp");
-			}
-			&.music {
-				top: 48%;
-				left: 41%;
-				width: 25%;
-				height: 17%;
-				transform: rotate(-5deg);
-				clip-path: polygon(7% 73%, 72% 0, 86% 0%, 100% 26%, 69% 44%, 16% 100%);
-				background-image: url("/_canopie/static/images/menu/music.webp");
-			}
-			&.live {
-				top: 29%;
-				left: 15%;
-				width: 20%;
-				height: 9%;
-				clip-path: polygon(0% 58%, 62% -10%, 81% 32%, 46% 64%, 3% 117%);
-				background-image: url("/_canopie/static/images/menu/live.webp");
-			}
-			&.contact {
-				top: 53%;
-				left: 57%;
-				width: 20%;
-				height: 16%;
-				clip-path: polygon(-17% 41%, 103% 0%, 100% 32%, 62% 46%, 6% 82%);
-				background-image: url("/_canopie/static/images/menu/contact.webp");
-			}
-		}
-	}
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  .menu-bg {
+    position: absolute;
+    top: calc(var(--spacing, 0.25rem) * 0);
+    left: calc(var(--spacing, 0.25rem) * 0);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url("/_canopie/static/images/menu/triangles-rainbow.webp");
+  }
+  .menu-content {
+    position: absolute;
+    top: calc(var(--spacing, 0.25rem) * 0);
+    left: calc(var(--spacing, 0.25rem) * 0);
+    height: 100%;
+    width: 100%;
+    .link {
+      position: absolute;
+      display: block;
+      cursor: pointer;
+      background-size: contain;
+      background-repeat: no-repeat;
+      color: transparent;
+      &:hover {
+        filter: brightness(2.2) contrast(1.1);
+      }
+      &.band {
+        top: 38%;
+        left: 31%;
+        width: 25%;
+        height: 17%;
+        clip-path: polygon(11% 61%, 72% 0, 91% 32%, 66% 44%, 29% 87%);
+        background-image: url("/_canopie/static/images/menu/band.webp");
+      }
+      &.vids {
+        top: 44%;
+        left: 39%;
+        width: 20%;
+        height: 12%;
+        clip-path: polygon(-11% 92%, 77% -4%, 96% 26%, 67% 62%, 13% 115%);
+        background-image: url("/_canopie/static/images/menu/vids.webp");
+      }
+      &.music {
+        top: 48%;
+        left: 41%;
+        width: 25%;
+        height: 17%;
+        transform: rotate(-5deg);
+        clip-path: polygon(7% 73%, 72% 0, 86% 0%, 100% 26%, 69% 44%, 16% 100%);
+        background-image: url("/_canopie/static/images/menu/music.webp");
+      }
+      &.live {
+        top: 29%;
+        left: 15%;
+        width: 20%;
+        height: 9%;
+        clip-path: polygon(0% 58%, 62% -10%, 81% 32%, 46% 64%, 3% 117%);
+        background-image: url("/_canopie/static/images/menu/live.webp");
+      }
+      &.contact {
+        top: 53%;
+        left: 57%;
+        width: 20%;
+        height: 16%;
+        clip-path: polygon(-17% 41%, 103% 0%, 100% 32%, 62% 46%, 6% 82%);
+        background-image: url("/_canopie/static/images/menu/contact.webp");
+      }
+    }
+  }
 }
 section#band {
-	--header-angle: 0deg;
-	--header-width: 280px;
-	--header-height: 100px;
-	--header-computed-height: calc(
+  --header-angle: 0deg;
+  --header-width: 280px;
+  --header-height: 100px;
+  --header-computed-height: calc(
 		(var(--header-height) * cos(var(--header-angle))) +
 		var(--header-width) *
 		sin(var(--header-angle))
 	);
-	--header-computed-width: calc(
+  --header-computed-width: calc(
 		(var(--header-width) * cos(var(--header-angle))) +
 		var(--header-height) *
 		sin(var(--header-angle))
 	);
-	padding-top: calc(var(--header-computed-height) + 1rem);
-	padding-inline: calc(var(--spacing, 0.25rem) * 4);
-	.big-block {
-		height: calc(var(--spacing, 0.25rem) * 0);
-		@media (width >= 40rem) {
-			height: calc(300px - var(--header-computed-height));
-		}
-		@media (width >= 48rem) {
-			height: calc(445px - var(--header-computed-height));
-		}
-		width: calc(var(--spacing, 0.25rem) * 0);
-		@media (width >= 40rem) {
-			width: 100%;
-		}
-		@media (width >= 48rem) {
-			width: 630px;
-		}
-		float: left;
-	}
-	.band-header {
-		left: calc(var(--spacing, 0.25rem) * 4);
-		@media (width >= 40rem) {
-			left: 440px;
-		}
-		@media (width >= 48rem) {
-			left: 630px;
-		}
-		content: "";
-		background-image: url("/_canopie/static/images/titles/band.webp");
-		background-repeat: no-repeat;
-		background-size: contain;
-		height: var(--header-height);
-		width: var(--header-width);
-		position: absolute;
-		top: 1rem;
-		transform-origin: center;
-		transform: translateY(
-				calc((var(--header-computed-height) - var(--header-height)) / 2)
-			)
-			translateX(calc((var(--header-computed-width) - var(--header-width)) / 2))
-			rotate(var(--header-angle));
-		z-index: 10;
-	}
+  padding-top: calc(var(--header-computed-height) + 1rem);
+  padding-inline: calc(var(--spacing, 0.25rem) * 4);
+  .big-block {
+    height: calc(var(--spacing, 0.25rem) * 0);
+    @media (width >= 40rem) {
+      height: calc(300px - var(--header-computed-height));
+    }
+    @media (width >= 48rem) {
+      height: calc(445px - var(--header-computed-height));
+    }
+    width: calc(var(--spacing, 0.25rem) * 0);
+    @media (width >= 40rem) {
+      width: 100%;
+    }
+    @media (width >= 48rem) {
+      width: 630px;
+    }
+    float: left;
+  }
+  .band-header {
+    left: calc(var(--spacing, 0.25rem) * 4);
+    @media (width >= 40rem) {
+      left: 440px;
+    }
+    @media (width >= 48rem) {
+      left: 630px;
+    }
+    content: "";
+    background-image: url("/_canopie/static/images/titles/band.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: var(--header-height);
+    width: var(--header-width);
+    position: absolute;
+    top: 1rem;
+    transform-origin: center;
+    transform: translateY(	calc((var(--header-computed-height) - var(--header-height)) / 2)	)	translateX(calc((var(--header-computed-width) - var(--header-width)) / 2))	rotate(var(--header-angle));
+    z-index: 10;
+  }
 }

@@ -1,59 +1,55 @@
-/*! tailwindcss v4.1.17 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
 section#band {
-	--header-angle: 0deg;
-	--header-width: 280px;
-	--header-height: 100px;
-	--header-computed-height: calc(
+  --header-angle: 0deg;
+  --header-width: 280px;
+  --header-height: 100px;
+  --header-computed-height: calc(
 		(var(--header-height) * cos(var(--header-angle))) +
 		var(--header-width) *
 		sin(var(--header-angle))
 	);
-	--header-computed-width: calc(
+  --header-computed-width: calc(
 		(var(--header-width) * cos(var(--header-angle))) +
 		var(--header-height) *
 		sin(var(--header-angle))
 	);
-	padding-top: calc(var(--header-computed-height) + 1rem);
-	padding-inline: calc(var(--spacing, 0.25rem) * 4);
-	.big-block {
-		height: calc(var(--spacing, 0.25rem) * 0);
-		@media (width >= 40rem) {
-			height: calc(300px - var(--header-computed-height));
-		}
-		@media (width >= 48rem) {
-			height: calc(445px - var(--header-computed-height));
-		}
-		width: calc(var(--spacing, 0.25rem) * 0);
-		@media (width >= 40rem) {
-			width: 100%;
-		}
-		@media (width >= 48rem) {
-			width: 630px;
-		}
-		float: left;
-	}
-	.band-header {
-		left: calc(var(--spacing, 0.25rem) * 4);
-		@media (width >= 40rem) {
-			left: 440px;
-		}
-		@media (width >= 48rem) {
-			left: 630px;
-		}
-		content: "";
-		background-image: url("/_canopie/static/images/titles/band.webp");
-		background-repeat: no-repeat;
-		background-size: contain;
-		height: var(--header-height);
-		width: var(--header-width);
-		position: absolute;
-		top: 1rem;
-		transform-origin: center;
-		transform: translateY(
-				calc((var(--header-computed-height) - var(--header-height)) / 2)
-			)
-			translateX(calc((var(--header-computed-width) - var(--header-width)) / 2))
-			rotate(var(--header-angle));
-		z-index: 10;
-	}
+  padding-top: calc(var(--header-computed-height) + 1rem);
+  padding-inline: calc(var(--spacing, 0.25rem) * 4);
+  .big-block {
+    height: calc(var(--spacing, 0.25rem) * 0);
+    @media (width >= 40rem) {
+      height: calc(300px - var(--header-computed-height));
+    }
+    @media (width >= 48rem) {
+      height: calc(445px - var(--header-computed-height));
+    }
+    width: calc(var(--spacing, 0.25rem) * 0);
+    @media (width >= 40rem) {
+      width: 100%;
+    }
+    @media (width >= 48rem) {
+      width: 630px;
+    }
+    float: left;
+  }
+  .band-header {
+    left: calc(var(--spacing, 0.25rem) * 4);
+    @media (width >= 40rem) {
+      left: 440px;
+    }
+    @media (width >= 48rem) {
+      left: 630px;
+    }
+    content: "";
+    background-image: url("/_canopie/static/images/titles/band.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: var(--header-height);
+    width: var(--header-width);
+    position: absolute;
+    top: 1rem;
+    transform-origin: center;
+    transform: translateY(	calc((var(--header-computed-height) - var(--header-height)) / 2)	)	translateX(calc((var(--header-computed-width) - var(--header-width)) / 2))	rotate(var(--header-angle));
+    z-index: 10;
+  }
 }
