@@ -11,6 +11,7 @@ canopie-themes-morningstar = { version = "0.1.0", path = "crates/morningstar", r
 
 [dependencies]
 canopie-themes-morningstar.workspace = true
+canopie-utils = { path = "../canopie-utils", registry = "canopie", version = "0.1.11" }
 
 [features]
-embed = ["canopie-themes-morningstar/embed"]
+embed = ["canopie-themes-morningstar/embed", "canopie-utils/embed"]

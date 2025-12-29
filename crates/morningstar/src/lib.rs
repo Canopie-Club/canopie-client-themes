@@ -1,3 +1,4 @@
+use canopie_macros::{ThemeConfig, theme_defaults};
 use canopie_utils::{
     components::{Asset, AssetOptions, Formatter},
     db::PgPool,
@@ -5,13 +6,26 @@ use canopie_utils::{
     models::Website,
     renderer::PageResult,
     theme_utils::get_menus,
+    themes::{
+        self, GetThemeOverview, PageThemeOverview, ThemeOverview, ThemeReference, ThemeSchema,
+    },
+};
+#[cfg(feature = "embed")]
+use canopie_utils::{
+    renderer::{GetThemeRenderer, ThemeRenderer},
+    resource::embed::ThemeResource,
 };
 #[cfg(feature = "embed")]
 use include_dir::Dir;
+use serde::{Deserialize, Serialize};
 
 use crate::{
     components::{album_cover::album_cover, video::youtube},
-    templates::{not_found::morningstar_not_found, spa::build_content_for_menu_pages},
+    templates::{
+        not_found::morningstar_not_found,
+        single::SinglePageConfig,
+        spa::{SpaPageConfig, build_content_for_menu_pages},
+    },
 };
 
 mod components;
@@ -49,11 +63,63 @@ pub fn morningstar(
     page_response.result
 }
 
+#[theme_defaults]
+#[derive(Serialize, Deserialize, Debug, ThemeConfig)]
+pub struct MorningStarConfig {}
+
+pub struct ThemeMorningStar {}
+
+impl GetThemeOverview for ThemeMorningStar {
+    fn get_id() -> String {
+        "morningstar".to_string()
+    }
+    fn get_name() -> String {
+        "Morning Star Music Club".to_string()
+    }
+    fn get_theme_overview() -> ThemeOverview {
+        ThemeOverview {
+            id: Self::get_id(),
+            name: Self::get_name(),
+            config: MorningStarConfig::schema(),
+            page_themes: vec![
+                PageThemeOverview {
+                    name: "Home Segment".to_string(),
+                    config: SpaPageConfig::schema(),
+                    default: false,
+                },
+                PageThemeOverview {
+                    name: "Full Page".to_string(),
+                    config: SinglePageConfig::schema(),
+                    default: true,
+                },
+            ],
+        }
+    }
+}
+
 #[cfg(feature = "embed")]
-pub fn get_theme_resources() -> Dir<'static> {
-    use include_dir::include_dir;
+impl ThemeResource for ThemeMorningStar {
+    fn get_theme_resources() -> Dir<'static> {
+        use include_dir::include_dir;
 
-    let theme_dir: Dir<'static> = include_dir!("$CARGO_MANIFEST_DIR/static");
+        let theme_dir: Dir<'static> = include_dir!("$CARGO_MANIFEST_DIR/static");
 
-    theme_dir
+        theme_dir
+    }
+    fn attach_theme_resources(
+        resources: &mut canopie_utils::resource::embed::Resources,
+    ) -> Result<(), String> {
+        resources.add_dir(Self::get_id().as_str(), Self::get_theme_resources());
+        Ok(())
+    }
+}
+
+#[cfg(feature = "embed")]
+impl GetThemeRenderer for ThemeMorningStar {
+    fn get_theme_renderer() -> ThemeRenderer {
+        ThemeRenderer {
+            name: Self::get_id(),
+            build_content: morningstar,
+        }
+    }
 }

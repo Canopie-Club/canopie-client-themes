@@ -1,3 +1,4 @@
+use canopie_macros::ThemeConfig;
 use canopie_utils::{
     components::{Asset, AssetOptions, Formatter, build_components},
     db::PgPool,
@@ -8,11 +9,15 @@ use canopie_utils::{
     types::tiptap::{empty_tiptap_node, to_tiptap_node},
 };
 use maud::{Markup, html};
+use serde::{Deserialize, Serialize};
 
 use crate::{
     sections::render_section,
     templates::{home, home_section, not_found::morningstar_not_found, single::single_page},
 };
+
+#[derive(Serialize, Deserialize, Debug, ThemeConfig)]
+pub struct SpaPageConfig {}
 
 pub fn build_content_for_menu_pages(
     pool: &PgPool,

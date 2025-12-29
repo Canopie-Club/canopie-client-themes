@@ -1,6 +1,6 @@
 use std::io::Error;
 
-use canopie_client_theme_morningstar::morningstar;
+use canopie_themes_morningstar::morningstar;
 use canopie_utils::renderer::ThemeRenderer;
 #[cfg(feature = "embed")]
 use canopie_utils::theme_dev::run::run::dev_serve;

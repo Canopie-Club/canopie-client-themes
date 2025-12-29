@@ -1,9 +1,14 @@
+use canopie_macros::ThemeConfig;
 use canopie_utils::header::Header;
 use maud::{Markup, html};
+use serde::{Deserialize, Serialize};
 
 use crate::components::bordered::{
     BorderWidth, Counts, Edge, Props as BorderedProps, bordered_component,
 };
+
+#[derive(Serialize, Deserialize, Debug, ThemeConfig)]
+pub struct SinglePageConfig {}
 
 pub fn single_page(path: &str, content: Markup, headers: &mut Header) -> Markup {
     let mut bordered_props = BorderedProps::default();
