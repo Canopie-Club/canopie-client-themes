@@ -8,7 +8,7 @@ publish = ["canopie"]
 # canopie-macros = { path = "../../canopie-utils/crates/macros" }
 canopie-macros = { path = "../../canopie-utils/crates/macros", registry = "canopie", version = "0.1.1" }
 # canopie-utils = { path = "../../canopie-utils" }
-canopie-utils = { path = "../../canopie-utils", registry = "canopie", version = "0.1.10" }
+canopie-utils = { path = "../../canopie-utils", registry = "canopie", version = "0.1.11" }
 include_dir = "0.7.4"
 # canopie-client-theme-base = { git = "https://github.com/Canopie-Club/canopie-client-themes.git", branch = "master" }
 maud = "0.27.0"
