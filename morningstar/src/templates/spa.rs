@@ -5,6 +5,7 @@ use canopie_utils::{
     models::{Menu, MenuItem},
     renderer::PageResponse,
     theme_utils::{get_page, get_page_from_id},
+    types::tiptap::{empty_tiptap_node, to_tiptap_node},
 };
 use maud::{Markup, html};
 
@@ -43,8 +44,9 @@ pub fn build_content_for_menu_pages(
         .any(|item| item.page_id.clone().unwrap_or("NO ID".to_string()) == given_page_id);
 
     if !page_in_menu {
-        let (components, formatter) =
-            build_components(page_content.content, None, Some(formatter.clone()));
+        let content = to_tiptap_node(page_content.content)
+            .unwrap_or(empty_tiptap_node(Some("Error parsing content")));
+        let (components, formatter) = build_components(content, None, Some(formatter.clone()));
         return PageResponse::new(
             page.title,
             single_page(path, components, headers),
@@ -82,8 +84,11 @@ pub fn build_content_for_menu_pages(
 
         let (components, new_formatter) = match item_details {
             Some((item_page, item_page_content)) => {
+                let content = to_tiptap_node(item_page_content.content)
+                    .unwrap_or(empty_tiptap_node(Some("Error parsing content")));
+
                 let (components, formatter) =
-                    build_components(item_page_content.content, None, Some(formatter.clone()));
+                    build_components(content, None, Some(formatter.clone()));
                 let path = item_page.slug.as_str();
 
                 let title = item_page.title.clone();
