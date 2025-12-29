@@ -569,7 +569,7 @@ dependencies = [
 
 [[package]]
 name = "canopie-themes"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "canopie-themes-morningstar",
  "canopie-utils",
@@ -590,7 +590,7 @@ dependencies = [
 
 [[package]]
 name = "canopie-utils"
-version = "0.1.12"
+version = "0.1.13"
 dependencies = [
  "actix-cors",
  "actix-files",
