@@ -6,6 +6,8 @@ use canopie_utils::{
     renderer::PageResult,
     theme_utils::get_menus,
 };
+#[cfg(feature = "embed")]
+use include_dir::Dir;
 
 use crate::{
     components::{album_cover::album_cover, video::youtube},
@@ -45,4 +47,13 @@ pub fn morningstar(
     headers.set_title(page_response.title.as_str());
 
     page_response.result
+}
+
+#[cfg(feature = "embed")]
+pub fn get_theme_resources() -> Dir<'static> {
+    use include_dir::include_dir;
+
+    let theme_dir: Dir<'static> = include_dir!("$CARGO_MANIFEST_DIR/static");
+
+    theme_dir
 }
