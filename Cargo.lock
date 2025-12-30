@@ -573,6 +573,7 @@ version = "0.1.1"
 dependencies = [
  "canopie-themes-morningstar",
  "canopie-utils",
+ "utoipa",
 ]
 
 [[package]]
@@ -590,7 +591,7 @@ dependencies = [
 
 [[package]]
 name = "canopie-utils"
-version = "0.1.13"
+version = "0.1.16"
 dependencies = [
  "actix-cors",
  "actix-files",
@@ -619,7 +620,6 @@ dependencies = [
  "swc_ecma_transforms_typescript",
  "swc_ecma_visit",
  "tokio",
- "utoipa",
  "uuid",
 ]
 
