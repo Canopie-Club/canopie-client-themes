@@ -134,7 +134,8 @@ use canopie_utils::prelude::*;
 use maud::{html, Markup};
 use serde::{Deserialize, Serialize};
 
-// Define a configuration schema for each page template
+// Define a configuration schema for each page template in
+// the `templates` subdirectory
 #[derive(Debug, Clone, Serialize, Deserialize, ThemeSchema)]
 pub struct MyPageConfig {
     // Example config fields
@@ -151,6 +152,7 @@ pub struct MyPageConfig {
 }
 
 // Define your theme's configuration schema
+// in the `lib.rs` file
 #[theme_defaults]
 #[derive(Debug, Clone, Serialize, Deserialize, ThemeSchema)]
 pub struct MyThemeConfig {
@@ -212,10 +214,13 @@ pub fn my_theme(
 
     let page_response = html! {
         div {
+            // This `build_menu_header` function can be defined in a subdirectory
             (build_menu_header(pool, path, &website.id, main_menu, formatter, headers))
         }
         // Styling should be done with tailwind style classes
         div class="flex flex-col items-center justify-center h-screen bg-gray-100">
+            // This `build_page_response` function can be defined in a subdirectory
+            // Or you can define a different function for each page template
             (build_page_response(pool, path, &website.id, main_menu, formatter, headers))
         }
     }
@@ -224,7 +229,7 @@ pub fn my_theme(
 
     headers.add_assets(assets);
     // This can be set inside the `build_page_response` function
-    headers.set_title("My Page Title".to_string());
+    headers.set_title("My Page Title");
 
     // Use the `PageResult::Found` variant to indicate that the page was found
     // For 404 errors, use `PageResult::NotFound`
@@ -246,3 +251,6 @@ impl GetThemeRenderer for ThemeMyTheme {
 Remember to replace placeholders like `{YOUR_THEME_NAME}` and fill in the detailed documentation for the `ThemeSchema`, `#[theme]`, and `#[theme_defaults]` attributes.
 
 When in doubt, refer to the Morning Star theme at `./crates/morningstar` or ask for clarification. For reference, the database schema is provided at `./reference/schema.rs` and available models from `./reference/models.rs`. These can be accessed from the `canopie_utils` crate.
+
+
+ps - the `./scripts` directory contains outdated scripts and should be ignored.
