@@ -7,7 +7,7 @@ edition = "2024"
 publish = ["canopie"]
 
 [workspace.dependencies]
-canopie-themes-morningstar = { version = "0.1.0", path = "crates/morningstar", registry = "canopie" }
+canopie-themes-morningstar = { version = "0.1.3", path = "crates/morningstar", registry = "canopie" }
 
 [dependencies]
 canopie-themes-morningstar.workspace = true
