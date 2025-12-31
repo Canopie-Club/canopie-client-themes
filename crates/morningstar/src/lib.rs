@@ -7,7 +7,8 @@ use canopie_utils::{
     renderer::PageResult,
     theme_utils::get_menus,
     themes::{
-        self, GetThemeOverview, PageThemeOverview, ThemeOverview, ThemeReference, ThemeSchema,
+        self, GetThemeOverview, PageThemeOverview, ThemeOverview, ThemeReference, ThemeRestriction,
+        ThemeSchema,
     },
 };
 #[cfg(feature = "embed")]
@@ -70,16 +71,12 @@ pub struct MorningStarConfig {}
 pub struct ThemeMorningStar {}
 
 impl GetThemeOverview for ThemeMorningStar {
-    fn get_id() -> String {
-        "morningstar".to_string()
-    }
-    fn get_name() -> String {
-        "Morning Star Music Club".to_string()
-    }
     fn get_theme_overview() -> ThemeOverview {
         ThemeOverview {
-            id: Self::get_id(),
-            name: Self::get_name(),
+            id: "morningstar".to_string(),
+            name: "Morning Star Music Club".to_string(),
+            description: Some("Morning Star Music Club".to_string()),
+            restricted: ThemeRestriction::Restricted(vec!["morningstar".to_string()]),
             config: MorningStarConfig::schema(),
             page_themes: vec![
                 PageThemeOverview {
@@ -109,7 +106,8 @@ impl ThemeResource for ThemeMorningStar {
     fn attach_theme_resources(
         resources: &mut canopie_utils::resource::embed::Resources,
     ) -> Result<(), String> {
-        resources.add_dir(Self::get_id().as_str(), Self::get_theme_resources());
+        let id = Self::get_theme_overview().id;
+        resources.add_dir(id.as_str(), Self::get_theme_resources());
         Ok(())
     }
 }
@@ -118,7 +116,7 @@ impl ThemeResource for ThemeMorningStar {
 impl GetThemeRenderer for ThemeMorningStar {
     fn get_theme_renderer() -> ThemeRenderer {
         ThemeRenderer {
-            name: Self::get_id(),
+            name: Self::get_theme_overview().id,
             build_content: morningstar,
         }
     }
