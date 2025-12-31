@@ -129,14 +129,15 @@ with default attributes.
 Your `src/main.rs` file will typically contain the core logic for your theme, utilizing the `canopie-macros` and `canopie-utils` crates to interact with the Canopie platform.
 
 ```rust
-use canopie_macros::{theme, theme_defaults, ThemeSchema};
+use canopie_macros::{theme, theme_defaults, ThemeConfig};
 use canopie_utils::prelude::*;
+use canopie_utils::theme::ThemeSchema;
 use maud::{html, Markup};
 use serde::{Deserialize, Serialize};
 
 // Define a configuration schema for each page template in
 // the `templates` subdirectory
-#[derive(Debug, Clone, Serialize, Deserialize, ThemeSchema)]
+#[derive(Debug, Clone, Serialize, Deserialize, ThemeConfig)]
 pub struct MyPageConfig {
     // Example config fields
     #[theme(
@@ -154,10 +155,10 @@ pub struct MyPageConfig {
 // Define your theme's configuration schema
 // in the `lib.rs` file
 #[theme_defaults]
-#[derive(Debug, Clone, Serialize, Deserialize, ThemeSchema)]
+#[derive(Debug, Clone, Serialize, Deserialize, ThemeConfig)]
 pub struct MyThemeConfig {
     // Example config fields
-    #[theme(width = "Half", default = "My Awesome Canopie Site".to_string())]
+    #[theme(width = "Half", default = "My Awesome Canopie Site")]
     pub site_title: String,
 
     #[theme(
