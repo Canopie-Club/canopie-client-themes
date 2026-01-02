@@ -7,8 +7,7 @@ use canopie_utils::{
     renderer::PageResult,
     theme_utils::get_menus,
     themes::{
-        self, GetThemeOverview, PageThemeOverview, ThemeOverview, ThemeReference, ThemeRestriction,
-        ThemeSchema,
+        self, GetThemeOverview, PageThemeOverview, ThemeOverview, ThemeRestriction, ThemeSchema,
     },
 };
 #[cfg(feature = "embed")]
