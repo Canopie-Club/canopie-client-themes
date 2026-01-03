@@ -569,7 +569,7 @@ dependencies = [
 
 [[package]]
 name = "canopie-themes"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "canopie-themes-morningstar",
  "canopie-utils",
