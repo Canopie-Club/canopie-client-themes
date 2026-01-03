@@ -559,7 +559,7 @@ dependencies = [
 
 [[package]]
 name = "canopie-macros"
-version = "0.2.1"
+version = "0.2.3"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -578,7 +578,7 @@ dependencies = [
 
 [[package]]
 name = "canopie-themes-morningstar"
-version = "0.1.5"
+version = "0.1.6"
 dependencies = [
  "canopie-macros",
  "canopie-utils",
@@ -591,7 +591,7 @@ dependencies = [
 
 [[package]]
 name = "canopie-utils"
-version = "0.2.0"
+version = "0.2.2"
 dependencies = [
  "actix-cors",
  "actix-files",

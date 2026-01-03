@@ -1,14 +1,14 @@
 [package]
 name = "canopie-themes-morningstar"
-version = "0.1.5"
+version = "0.1.6"
 edition = "2024"
 publish = ["canopie"]
 
 [dependencies]
 # canopie-macros = { path = "../../canopie-utils/crates/macros" }
-canopie-macros = { path = "../../../canopie-utils/crates/macros", registry = "canopie", version = "0.2.1" }
+canopie-macros = { path = "../../../canopie-utils/crates/macros", registry = "canopie", version = "0.2.3" }
 # canopie-utils = { path = "../../canopie-utils" }
-canopie-utils = { path = "../../../canopie-utils", registry = "canopie", version = "0.2.0" }
+canopie-utils = { path = "../../../canopie-utils", registry = "canopie", version = "0.2.2" }
 include_dir = "0.7.4"
 # canopie-client-theme-base = { git = "https://github.com/Canopie-Club/canopie-client-themes.git", branch = "master" }
 maud = "0.27.0"
