@@ -49,8 +49,17 @@ pub fn build_content_for_menu_pages(
         .any(|item| item.page_id.clone().unwrap_or("NO ID".to_string()) == given_page_id);
 
     if !page_in_menu {
-        let content = to_tiptap_node(page_content.content)
-            .unwrap_or(empty_tiptap_node(Some("Error parsing content")));
+        let content = match to_tiptap_node(page_content.content) {
+            Ok(content) => content,
+            Err(error) => {
+                // tracing::error!("Error parsing content: {}", error);
+                // tracing::error!(
+                //     "Value failed to parse: {:?}",
+                //     serde_json::to_string(&page_content.content)
+                // );
+                empty_tiptap_node(Some("Error parsing content"))
+            }
+        };
         let (components, formatter) = build_components(content, None, Some(formatter.clone()));
         return PageResponse::new(
             page.title,
@@ -89,8 +98,17 @@ pub fn build_content_for_menu_pages(
 
         let (components, new_formatter) = match item_details {
             Some((item_page, item_page_content)) => {
-                let content = to_tiptap_node(item_page_content.content)
-                    .unwrap_or(empty_tiptap_node(Some("Error parsing content")));
+                let content = match to_tiptap_node(item_page_content.content) {
+                    Ok(content) => content,
+                    Err(error) => {
+                        // tracing::error!("Error parsing content: {}", error);
+                        // tracing::error!(
+                        //     "Value failed to parse: {:?}",
+                        //     serde_json::to_string(&item_page_content.content)
+                        // );
+                        empty_tiptap_node(Some("Error parsing content"))
+                    }
+                };
 
                 let (components, formatter) =
                     build_components(content, None, Some(formatter.clone()));

@@ -133,9 +133,9 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         var visibleElements = _to_consumable_array(visibleItems);
         var lastItem = visibleElements[visibleElements.length - 1];
-        var id = lastItem.id;
-        var title = lastItem.getAttribute("page-title") || undefined;
-        if (id !== currentSectionId) {
+        var id = lastItem === null || lastItem === void 0 ? void 0 : lastItem.id;
+        var title = (lastItem === null || lastItem === void 0 ? void 0 : lastItem.getAttribute("page-title")) || undefined;
+        if (id && id !== currentSectionId) {
             currentSectionId = id;
             updateHistoryAndTitle(id, title);
         }

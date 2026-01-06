@@ -587,6 +587,7 @@ dependencies = [
  "regex",
  "serde",
  "serde_json",
+ "tracing",
 ]
 
 [[package]]
@@ -620,6 +621,7 @@ dependencies = [
  "swc_ecma_transforms_typescript",
  "swc_ecma_visit",
  "tokio",
+ "tracing",
  "uuid",
 ]
 

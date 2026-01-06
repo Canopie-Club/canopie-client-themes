@@ -15,6 +15,7 @@ maud = "0.27.0"
 regex = "1.12.2"
 serde = { version = "1.0.228", features = ["derive"] }
 serde_json = "1.0.148"
+tracing = "0.1.44"
 
 [features]
 default=[]

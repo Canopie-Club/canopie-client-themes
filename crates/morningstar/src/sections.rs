@@ -99,7 +99,7 @@ fn section_band(content: Markup) -> Markup {
         div class="band-header" {}
         div class="section-band" {
             div class="big-block" {}
-            div class="section-band-content text-white container m-auto" {
+            div class="section-band-content text-white container m-auto max-w-screen-md" {
                 (content)
             }
         }
@@ -109,7 +109,7 @@ fn section_band(content: Markup) -> Markup {
 fn section_vids(content: Markup) -> Markup {
     html! {
         div class="section-vids" {
-            div class="section-vids-content text-white container m-auto" {
+            div class="section-vids-content text-white container m-auto max-w-screen-md" {
                 div class="page-title" {}
                 (content)
             }
@@ -120,12 +120,9 @@ fn section_vids(content: Markup) -> Markup {
 fn section_music(content: Markup) -> Markup {
     html! {
         div class="section-music" {
-            div class="section-about-content text-white container m-auto" {
+            div class="section-about-content text-white container m-auto max-w-screen-md" {
                 div class="page-title" {}
-
-                div class="cds grid grid-cols-2 gap-10" {
-                    (content)
-                }
+                (content)
             }
         }
     }

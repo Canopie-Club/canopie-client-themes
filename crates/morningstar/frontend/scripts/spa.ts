@@ -102,9 +102,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			const visibleElements = [...visibleItems];
 
 			const lastItem = visibleElements[visibleElements.length - 1];
-			const id = lastItem.id;
-			const title = lastItem.getAttribute("page-title") || undefined;
-			if (id !== currentSectionId) {
+			const id = lastItem?.id;
+			const title = lastItem?.getAttribute("page-title") || undefined;
+			if (id && id !== currentSectionId) {
 				currentSectionId = id;
 				updateHistoryAndTitle(id, title);
 			}
