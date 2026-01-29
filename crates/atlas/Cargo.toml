@@ -1,0 +1,20 @@
+[package]
+name = "canopie-themes-atlas"
+version = "0.1.0"
+edition = "2024"
+publish = ["canopie"]
+
+[dependencies]
+canopie-macros = { path = "../../../canopie-utils/crates/macros", registry = "canopie", version = "0.2.3" }
+canopie-utils = { path = "../../../canopie-utils", registry = "canopie", version = "0.2.4" }
+include_dir = "0.7.4"
+maud = "0.27.0"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.148"
+tracing = "0.1.44"
+regex = "1.12.2"
+
+[features]
+default = []
+embed = ["canopie-utils/embed"]
+dev = ["embed", "canopie-utils/dev"]

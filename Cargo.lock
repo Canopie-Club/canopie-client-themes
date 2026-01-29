@@ -637,11 +637,26 @@ dependencies = [
 
 [[package]]
 name = "canopie-themes"
-version = "0.2.4"
+version = "0.2.5"
 dependencies = [
+ "canopie-themes-atlas",
  "canopie-themes-morningstar",
  "canopie-utils 0.2.4 (sparse+https://kellnr.canopieclub.com/api/v1/crates/)",
  "utoipa",
+]
+
+[[package]]
+name = "canopie-themes-atlas"
+version = "0.1.0"
+dependencies = [
+ "canopie-macros 0.2.3",
+ "canopie-utils 0.2.4",
+ "include_dir",
+ "maud",
+ "regex",
+ "serde",
+ "serde_json",
+ "tracing",
 ]
 
 [[package]]
