@@ -2,7 +2,7 @@
 
 [package]
 name = "canopie-themes"
-version = "0.2.5"
+version = "0.2.6"
 edition = "2024"
 publish = ["canopie"]
 
@@ -18,5 +18,5 @@ canopie-utils = { path = "../canopie-utils", registry = "canopie", version = "0.
 utoipa = { version = "5.4.0", optional = true }
 
 [features]
-embed = ["canopie-themes-morningstar/embed", "canopie-utils/embed"]
+embed = ["canopie-themes-morningstar/embed", "canopie-themes-atlas/embed", "canopie-utils/embed"]
 utoipa = ["dep:utoipa"]
