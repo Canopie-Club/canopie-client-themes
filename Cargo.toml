@@ -13,8 +13,8 @@ canopie-themes-atlas = { version = "0.1.0", path = "crates/atlas", registry = "c
 [dependencies]
 canopie-themes-morningstar.workspace = true
 canopie-themes-atlas.workspace = true
-# canopie-utils = { path = "../canopie-utils", registry = "canopie", version = "0.2.4" }
-canopie-utils = { registry = "canopie", version = "0.2.4" }
+canopie-utils = { path = "../canopie-utils", registry = "canopie", version = "0.2.4" }
+# canopie-utils = { registry = "canopie", version = "0.2.4" }
 utoipa = { version = "5.4.0", optional = true }
 
 [features]

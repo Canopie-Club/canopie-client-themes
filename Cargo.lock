@@ -624,24 +624,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "canopie-macros"
-version = "0.2.3"
-source = "sparse+https://kellnr.canopieclub.com/api/v1/crates/"
-checksum = "d2ff0fcb13f0ba16f317a6fd764cce96aefe57edd31ae5964e781e1bbfb9603b"
-dependencies = [
- "proc-macro2",
- "quote",
- "serde_json",
- "syn",
-]
-
-[[package]]
 name = "canopie-themes"
 version = "0.2.5"
 dependencies = [
  "canopie-themes-atlas",
  "canopie-themes-morningstar",
- "canopie-utils 0.2.4 (sparse+https://kellnr.canopieclub.com/api/v1/crates/)",
+ "canopie-utils",
  "utoipa",
 ]
 
@@ -649,8 +637,8 @@ dependencies = [
 name = "canopie-themes-atlas"
 version = "0.1.0"
 dependencies = [
- "canopie-macros 0.2.3",
- "canopie-utils 0.2.4",
+ "canopie-macros",
+ "canopie-utils",
  "include_dir",
  "maud",
  "regex",
@@ -663,8 +651,8 @@ dependencies = [
 name = "canopie-themes-morningstar"
 version = "0.1.7"
 dependencies = [
- "canopie-macros 0.2.3",
- "canopie-utils 0.2.4",
+ "canopie-macros",
+ "canopie-utils",
  "include_dir",
  "maud",
  "regex",
@@ -681,7 +669,7 @@ dependencies = [
  "actix-files",
  "actix-web",
  "anyhow",
- "canopie-macros 0.2.3",
+ "canopie-macros",
  "chrono",
  "diesel",
  "dotenvy",
@@ -704,39 +692,6 @@ dependencies = [
  "swc_ecma_parser",
  "swc_ecma_transforms_typescript",
  "swc_ecma_visit",
- "tokio",
- "tracing",
- "uuid",
-]
-
-[[package]]
-name = "canopie-utils"
-version = "0.2.4"
-source = "sparse+https://kellnr.canopieclub.com/api/v1/crates/"
-checksum = "92edab08f6958c283b07d824603c2f02f84d60cdea12bb56ba236058a16109f6"
-dependencies = [
- "actix-cors",
- "actix-files",
- "actix-web",
- "anyhow",
- "canopie-macros 0.2.3 (sparse+https://kellnr.canopieclub.com/api/v1/crates/)",
- "chrono",
- "diesel",
- "dotenvy",
- "encre-css",
- "image",
- "include_dir",
- "libvips",
- "maud",
- "maud-icons",
- "mime_guess",
- "regex",
- "rust-embed",
- "schemars",
- "serde",
- "serde_json",
- "strum",
- "strum_macros",
  "tokio",
  "tracing",
  "uuid",
